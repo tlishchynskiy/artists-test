@@ -14,6 +14,10 @@ Accept: application/json
 GET {{url}}/{{prefix}}/artists?filter[active]
 Accept: application/json
 
+### Error wrapped by Laravel's collection
+GET {{url}}/{{prefix}}/artists?filter[ohmyerror]
+Accept: application/json
+
 ### [localhost] Get all artists
 GET http://localhost/{{prefix}}/artists
 Accept: application/json
@@ -28,4 +32,8 @@ Accept: application/json
 
 ### [localhost] Get active artists
 GET http://localhost/{{prefix}}/artists?filter[active]
+Accept: application/json
+
+### [localhost] Error wrapped by Laravel's collection
+GET http://localhost/{{prefix}}/artists?filter[ohmyerror]
 Accept: application/json
