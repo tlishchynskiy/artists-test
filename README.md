@@ -10,6 +10,12 @@ GET `http://artists.test/api/artists?filter[active]` => active
 > Artists filter by email <br/>
 GET `http://artists.test/api/artists?filter[email]=some_email` => email
 
+> Error wrapped by Laravel's collection <br/>
+GET `http://artists.test/api/artists?filter[ohmyerror]` => error response with 400 HTTP code
+I didn't add any custom wrapper as Laravel has built-in if we use Collections.
+
+** You can replace `artists.test` with `localhost` if you host on 80 port. If port is different from 80, use `localhost:<port>`.
+
 All endpoints are paginated and wrapped as a Laravel collection, so the frontend part should use it without any issues.
 
 If you use JetBrains production, such as PHPStorm, you can just right into `./tests/HTTP/artists.http` file to run HTTP requests right from the IDE (don't forget to select the dev environment located in `./tests/HTTP/http-client.env.json`).
@@ -24,6 +30,7 @@ cd artists-test
 And follow the instructions below:
 
 If you have `make` and `docker`/`podman`-compose installed:
+** For immutable linux distros with pre-installed OCI containers, install podman-compose using rpm-ostree or similar.
 ```bash
 make rollup
 ```
