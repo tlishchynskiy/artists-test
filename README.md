@@ -47,6 +47,7 @@ Otherwise, here are steps to rollup your local without make or docker/podman-com
 5. Add database credentials to `.env` file
 6. `php artisan migrate`
 7. `php artisan db:seed`
+8. `php artisan serve`
 
 If you want to add local domain to hosts file, you can run `make` command or add it manually:
 - `sudo make add-host`
