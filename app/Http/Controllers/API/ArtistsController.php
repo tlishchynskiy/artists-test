@@ -18,7 +18,7 @@ class ArtistsController extends Controller
      * @route /api/artists
      * @return ArtistCollection
      */
-    public function handle(): ArtistCollection
+    public function handle(Request $request): ArtistCollection
     {
         return new ArtistCollection(
             QueryBuilder::for(\App\Models\Artist::class)
@@ -28,6 +28,7 @@ class ArtistsController extends Controller
                     AllowedFilter::scope('inactive')->nullable(),
                 ])
                 ->paginate(100)
+                ->appends($request->query())
         );
     }
 }
