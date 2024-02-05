@@ -1,0 +1,31 @@
+### Get all artists
+GET {{url}}/{{prefix}}/artists
+Accept: application/json
+
+### Get artists filtered by email
+GET {{url}}/{{prefix}}/artists?filter[email]=@yahoo
+Accept: application/json
+
+### Get inactive artists
+GET {{url}}/{{prefix}}/artists?filter[inactive]
+Accept: application/json
+
+### Get active artists
+GET {{url}}/{{prefix}}/artists?filter[active]
+Accept: application/json
+
+### [localhost] Get all artists
+GET http://localhost/{{prefix}}/artists
+Accept: application/json
+
+### [localhost] Get artists filtered by email
+GET http://localhost/{{prefix}}/artists?filter[email]=@yahoo
+Accept: application/json
+
+### [localhost] Get inactive artists
+GET http://localhost/{{prefix}}/artists?filter[inactive]
+Accept: application/json
+
+### [localhost] Get active artists
+GET http://localhost/{{prefix}}/artists?filter[active]
+Accept: application/json

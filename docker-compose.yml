@@ -1,0 +1,66 @@
+volumes:
+  db-store:
+  psysh-store:
+
+configs:
+  db-config:
+    file: ./.docker/mysql/my.cnf
+
+services:
+  php:
+    container_name: artists_php
+    build:
+      context: .
+      dockerfile: ./.docker/php/Dockerfile
+      target: ${CD_BUILD_STAGE:-development}
+      args:
+        PUID: 1000
+        PGID: 1000
+        USER: worker
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace:z
+      - type: volume
+        source: psysh-store
+        target: /root/.config/psysh:z
+        volume:
+          nocopy: true
+
+  nginx:
+    container_name: artists_nginx
+    build:
+      context: .
+      dockerfile: ./.docker/nginx/Dockerfile
+    ports:
+      - target: 80
+        published: ${NGINX_EXPOSED_PORT:-80}
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace:z
+
+  db:
+    container_name: artists_master_db
+    image: mysql/mysql-server:8.0
+    ports:
+      - target: 3306
+        published: ${DB_EXPOSED_PORT:-3306}
+        protocol: tcp
+        mode: host
+    configs:
+      - source: db-config
+        target: /etc/my.cnf:z
+    volumes:
+      - type: volume
+        source: db-store
+        target: /var/lib/mysql:z
+        volume:
+          nocopy: true
+    environment:
+      - MYSQL_DATABASE=api
+      - MYSQL_USER=operator
+      - MYSQL_PASSWORD=secret
+      - MYSQL_ROOT_PASSWORD=secret
