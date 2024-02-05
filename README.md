@@ -4,7 +4,7 @@
 GET `http://artists.test/api/artists` => all artists
 
 > Artists filter by active/inactive <br/>
-GET `http://artists.test/api/artists?filter[inactive]` => inactive
+GET `http://artists.test/api/artists?filter[inactive]` => inactive <br/>
 GET `http://artists.test/api/artists?filter[active]` => active
 
 > Artists filter by email <br/>
