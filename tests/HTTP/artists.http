@@ -1,39 +1,39 @@
 ### Get all artists
-GET {{url}}/{{prefix}}/artists
+GET {{url}}/{{prefix}}/{{version}}/artists
 Accept: application/json
 
 ### Get artists filtered by email
-GET {{url}}/{{prefix}}/artists?filter[email]=@yahoo
+GET {{url}}/{{prefix}}/{{version}}/artists?filter[email]=@yahoo
 Accept: application/json
 
 ### Get inactive artists
-GET {{url}}/{{prefix}}/artists?filter[inactive]
+GET {{url}}/{{prefix}}/{{version}}/artists?filter[inactive]
 Accept: application/json
 
 ### Get active artists
-GET {{url}}/{{prefix}}/artists?filter[active]
+GET {{url}}/{{prefix}}/{{version}}/artists?filter[active]
 Accept: application/json
 
 ### Error wrapped by Laravel's collection
-GET {{url}}/{{prefix}}/artists?filter[ohmyerror]
+GET {{url}}/{{prefix}}/{{version}}/artists?filter[ohmyerror]
 Accept: application/json
 
 ### [localhost] Get all artists
-GET http://localhost/{{prefix}}/artists
+GET http://localhost/{{prefix}}/{{version}}/artists
 Accept: application/json
 
 ### [localhost] Get artists filtered by email
-GET http://localhost/{{prefix}}/artists?filter[email]=@yahoo
+GET http://localhost/{{prefix}}/{{version}}/artists?filter[email]=@yahoo
 Accept: application/json
 
 ### [localhost] Get inactive artists
-GET http://localhost/{{prefix}}/artists?filter[inactive]
+GET http://localhost/{{prefix}}/{{version}}/artists?filter[inactive]
 Accept: application/json
 
 ### [localhost] Get active artists
-GET http://localhost/{{prefix}}/artists?filter[active]
+GET http://localhost/{{prefix}}/{{version}}/artists?filter[active]
 Accept: application/json
 
 ### [localhost] Error wrapped by Laravel's collection
-GET http://localhost/{{prefix}}/artists?filter[ohmyerror]
+GET http://localhost/{{prefix}}/{{version}}/artists?filter[ohmyerror]
 Accept: application/json

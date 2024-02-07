@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes
+| API Routes - Versioned (V.1)
 |--------------------------------------------------------------------------
 |
 | Here is where you can register API routes for your application. These
