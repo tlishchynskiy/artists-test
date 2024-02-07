@@ -61,14 +61,14 @@ If you want to add local domain to hosts file, you can run `make` command or add
 - Manually: add `127.0.0.1 artists.test` to `/etc/hosts` file.
 
 ### Files changed/added:
-app/Http/Controllers/api/v1/ArtistsController.php <br/>
-app/Http/Resources/ArtistCollection.php
+`app/Http/Controllers/api/v1/ArtistsController.php` <br/>
+`app/Http/Resources/ArtistCollection.php`
 
-database/factories/ArtistFactory.php
-database/migrations/2024_02_05_132158_create_artists_table.php
-database/seeders/ArtistsSeeder.php
+`database/factories/ArtistFactory.php`
+`database/migrations/2024_02_05_132158_create_artists_table.php`
+`database/seeders/ArtistsSeeder.php`
 
-routes/api/v1.php
+`routes/api/v1.php`
 
-tests/HTTP/artists.http <br/>
-tests/HTTP/http-client.env.json
+`tests/HTTP/artists.http` <br/>
+`tests/HTTP/http-client.env.json`
