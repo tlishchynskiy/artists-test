@@ -1,17 +1,17 @@
 # Artists-test
 ### Endpoints:
 > All artists <br/>
-GET `http://artists.test/api/artists` => all artists
+GET `http://artists.test/api/v1/artists` => all artists
 
 > Artists filter by active/inactive <br/>
-GET `http://artists.test/api/artists?filter[inactive]` => inactive <br/>
-GET `http://artists.test/api/artists?filter[active]` => active
+GET `http://artists.test/api/v1/artists?filter[inactive]` => inactive <br/>
+GET `http://artists.test/api/v1/artists?filter[active]` => active
 
 > Artists filter by email <br/>
-GET `http://artists.test/api/artists?filter[email]=some_email` => email
+GET `http://artists.test/api/v1/artists?filter[email]=some_email` => email
 
 > Error wrapped by Laravel's collection <br/>
-GET `http://artists.test/api/artists?filter[ohmyerror]` => error response with 400 HTTP code
+GET `http://artists.test/api/v1/artists?filter[ohmyerror]` => error response with 400 HTTP code
 I didn't add any custom wrapper as Laravel has built-in if we use Collections.
 
 ** You can replace `artists.test` with `localhost` if you host on 80 port. If port is different from 80, use `localhost:<port>`.
@@ -61,14 +61,14 @@ If you want to add local domain to hosts file, you can run `make` command or add
 - Manually: add `127.0.0.1 artists.test` to `/etc/hosts` file.
 
 ### Files changed/added:
-app/Http/Controllers/API/ArtistsController.php <br/>
+app/Http/Controllers/api/v1/ArtistsController.php <br/>
 app/Http/Resources/ArtistCollection.php
 
 database/factories/ArtistFactory.php
 database/migrations/2024_02_05_132158_create_artists_table.php
 database/seeders/ArtistsSeeder.php
 
-routes/api.php
+routes/api/v1.php
 
 tests/HTTP/artists.http <br/>
 tests/HTTP/http-client.env.json
