@@ -64,6 +64,10 @@ If you want to add local domain to hosts file, you can run `make` command or add
 app/Http/Controllers/API/ArtistsController.php <br/>
 app/Http/Resources/ArtistCollection.php
 
+database/factories/ArtistFactory.php
+database/migrations/2024_02_05_132158_create_artists_table.php
+database/seeders/ArtistsSeeder.php
+
 routes/api.php
 
 tests/HTTP/artists.http <br/>
