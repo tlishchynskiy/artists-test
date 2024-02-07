@@ -1,39 +1,61 @@
 ### Get all artists
 GET {{url}}/{{prefix}}/{{version}}/artists
 Accept: application/json
+Authorization: Basic development-pass
 
 ### Get artists filtered by email
 GET {{url}}/{{prefix}}/{{version}}/artists?filter[email]=@yahoo
 Accept: application/json
+Authorization: Basic development-pass
 
 ### Get inactive artists
 GET {{url}}/{{prefix}}/{{version}}/artists?filter[inactive]
 Accept: application/json
+Authorization: Basic development-pass
 
 ### Get active artists
 GET {{url}}/{{prefix}}/{{version}}/artists?filter[active]
 Accept: application/json
+Authorization: Basic development-pass
 
 ### Error wrapped by Laravel's collection
 GET {{url}}/{{prefix}}/{{version}}/artists?filter[ohmyerror]
 Accept: application/json
+Authorization: Basic development-pass
+
+### Wrong authorization header
+GET {{url}}/{{prefix}}/{{version}}/artists
+Accept: application/json
+Authorization: Basic development-without-pass
+
+############
 
 ### [localhost] Get all artists
 GET http://localhost/{{prefix}}/{{version}}/artists
 Accept: application/json
+Authorization: Basic development-pass
 
 ### [localhost] Get artists filtered by email
 GET http://localhost/{{prefix}}/{{version}}/artists?filter[email]=@yahoo
 Accept: application/json
+Authorization: Basic development-pass
 
 ### [localhost] Get inactive artists
 GET http://localhost/{{prefix}}/{{version}}/artists?filter[inactive]
 Accept: application/json
+Authorization: Basic development-pass
 
 ### [localhost] Get active artists
 GET http://localhost/{{prefix}}/{{version}}/artists?filter[active]
 Accept: application/json
+Authorization: Basic development-pass
 
 ### [localhost] Error wrapped by Laravel's collection
 GET http://localhost/{{prefix}}/{{version}}/artists?filter[ohmyerror]
 Accept: application/json
+Authorization: Basic development-pass
+
+### [localhost] Wrong authorization header
+GET http://localhost/{{prefix}}/{{version}}/artists
+Accept: application/json
+Authorization: Basic development-without-pass

@@ -14,6 +14,9 @@ GET `http://artists.test/api/v1/artists?filter[email]=some_email` => email
 GET `http://artists.test/api/v1/artists?filter[ohmyerror]` => error response with 400 HTTP code
 I didn't add any custom wrapper as Laravel has built-in if we use Collections.
 
+API has Basic authorization, so pass `Authorization: Basic development-pass` header in your requests.
+Check `tests/HTTP/artists.http` for request examples.
+
 ** You can replace `artists.test` with `localhost` if you host on 80 port. If port is different from 80, use `localhost:<port>`.
 
 All endpoints are paginated and wrapped as a Laravel collection, so the frontend part should use it without any issues.
